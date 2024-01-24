@@ -14,9 +14,10 @@ import type { NaNotificationsProps } from '@/components/NaNotifications';
 
 import { getStorageItem } from '@/utils/localStorage';
 
+import { appLng, mantineCustomTheme } from '@/config';
+
 import type { AppProps } from 'next/app';
 
-import { appLng, mantineCustomTheme } from '@/config';
 
 import '@/styles/global.css';
 import '@mantine/core/styles.css';
@@ -32,7 +33,7 @@ use(initReactI18next)
     fallbackLng: appLng,
     lng,
     ns: ['index'],
-    debug: true,
+    // debug: true,
     defaultNS: 'index',
     interpolation: {
       escapeValue: false,
