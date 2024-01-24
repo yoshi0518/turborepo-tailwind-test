@@ -12,11 +12,16 @@ import { zodI18nMap } from 'zod-i18n-map';
 import { NaNotifications } from '@/components/NaNotifications';
 import type { NaNotificationsProps } from '@/components/NaNotifications';
 
+import indexLocalesEn from '@/utils/i18n/locales/en/index.json';
+import zodLocalesEn from '@/utils/i18n/locales/en/zod.json';
+import indexLocalesJa from '@/utils/i18n/locales/ja/index.json';
+import zodLocalesJa from '@/utils/i18n/locales/ja/zod.json';
 import { getStorageItem } from '@/utils/localStorage';
+
+import { appLng, mantineCustomTheme } from '@/config';
 
 import type { AppProps } from 'next/app';
 
-import { appLng, mantineCustomTheme } from '@/config';
 
 import '@/styles/global.css';
 import '@mantine/core/styles.css';
@@ -32,10 +37,20 @@ use(initReactI18next)
     fallbackLng: appLng,
     lng,
     ns: ['index'],
-    debug: true,
+    // debug: true,
     defaultNS: 'index',
     interpolation: {
       escapeValue: false,
+    },
+    resources: {
+      ja: {
+        index: indexLocalesJa,
+        zod: zodLocalesJa,
+      },
+      en: {
+        index: indexLocalesEn,
+        zod: zodLocalesEn,
+      },
     },
   });
 

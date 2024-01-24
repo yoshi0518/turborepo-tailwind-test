@@ -8,17 +8,20 @@ import { NaBaseSelect } from '@/components/NaBaseSelect';
 
 import { useI18nStore } from '@/stores/i18n';
 
+import { getStorageItem } from '@/utils/localStorage';
+
 import { appTitle } from '@/config';
 
 const languages = [
   { label: '日本語', value: 'ja' },
   { label: '英語', value: 'en' },
 ];
+const defaultLng = getStorageItem('lng');
 
 export const I18nPage = () => {
   const title = `I18n | ${appTitle}`;
   const router = useRouter();
-  const [value, setValue] = useState('ja');
+  const [lng, setLng] = useState(defaultLng);
   const { t } = useTranslation();
   const changeLng = useI18nStore((store) => store.changeLng);
 
@@ -31,11 +34,11 @@ export const I18nPage = () => {
       <h1 className="text-lg font-semibold">I18nPage</h1>
       <div className="w-1/4">
         <NaBaseSelect
-          value={value}
+          value={lng}
           selectItems={languages}
           label="言語切替"
           onChange={(e) => {
-            setValue(e.target.value);
+            setLng(e.target.value);
             changeLng(e.target.value);
           }}
         />
