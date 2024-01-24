@@ -12,6 +12,10 @@ import { zodI18nMap } from 'zod-i18n-map';
 import { NaNotifications } from '@/components/NaNotifications';
 import type { NaNotificationsProps } from '@/components/NaNotifications';
 
+import indexLocalesEn from '@/utils/i18n/locales/en/index.json';
+import zodLocalesEn from '@/utils/i18n/locales/en/zod.json';
+import indexLocalesJa from '@/utils/i18n/locales/ja/index.json';
+import zodLocalesJa from '@/utils/i18n/locales/ja/zod.json';
 import { getStorageItem } from '@/utils/localStorage';
 
 import { appLng, mantineCustomTheme } from '@/config';
@@ -37,6 +41,16 @@ use(initReactI18next)
     defaultNS: 'index',
     interpolation: {
       escapeValue: false,
+    },
+    resources: {
+      ja: {
+        index: indexLocalesJa,
+        zod: zodLocalesJa,
+      },
+      en: {
+        index: indexLocalesEn,
+        zod: zodLocalesEn,
+      },
     },
   });
 

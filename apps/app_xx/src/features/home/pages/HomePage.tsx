@@ -25,6 +25,9 @@ export const HomePage = () => {
         <NaBaseButton variant="outline" onClick={() => router.push('/ui')} className="mr-2">
           UiPageへ移動
         </NaBaseButton>
+        <NaBaseButton variant="outline" onClick={() => router.push('/form')} className="mr-2">
+          FormPageへ移動
+        </NaBaseButton>
         <NaBaseButton variant="outline" onClick={() => router.push('/env')} className="mr-2">
           EnvPageへ移動
         </NaBaseButton>
