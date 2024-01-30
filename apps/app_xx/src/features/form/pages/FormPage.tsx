@@ -25,7 +25,6 @@ import { appTitle } from '@/config';
 
 import { FormArray } from './FormArray';
 
-
 const LoginSchema = z
   .object({
     email: z.string().email().min(1),

@@ -32,6 +32,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'off',
     'react/display-name': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     'import/no-unresolved': 'off',
     'import/order': [
