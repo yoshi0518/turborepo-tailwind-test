@@ -20,7 +20,7 @@ import { getStorageItem } from '@/utils/localStorage';
 
 import { appLng, mantineCustomTheme } from '@/config';
 
-import type { AppProps } from 'next/app';
+import type { AppPropsWithLayout } from 'next/app';
 
 
 import '@/styles/global.css';
@@ -68,10 +68,11 @@ const notificationsProps: NaNotificationsProps = {
   zIndex: 1000,
 };
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
   z.setErrorMap(zodI18nMap);
 
-  return (
+  return getLayout(
     <>
       <div className={clsx('select-none p-2 text-sm', notoSansJp.className)}>
         <MantineProvider theme={mantineCustomTheme}>
@@ -80,7 +81,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         </MantineProvider>
       </div>
       <Script src="/main.js" defer />
-    </>
+    </>,
   );
 };
 
