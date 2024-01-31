@@ -24,6 +24,9 @@ export const pagesPath = {
     }),
     $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/router' as const, hash: url?.hash }),
   },
+  ssr: {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/ssr' as const, hash: url?.hash }),
+  },
   ui: {
     $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/ui' as const, hash: url?.hash }),
   },

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 
-import { RouterDetailPage } from '@/features/router/RouterDetailPage';
+import { RouterDetailPage } from '@/features/router/pages/RouterDetailPage';
 
 import { DefaultLayout } from '@/layouts/default';
 
