@@ -40,6 +40,9 @@ export const HomePage = () => {
         <NaBaseButton variant="outline" onClick={() => router.push('/router')} className="mr-2">
           RouterPageへ移動
         </NaBaseButton>
+        <NaBaseButton variant="outline" onClick={() => router.push('/ssr')} className="mr-2">
+          SsrPageへ移動
+        </NaBaseButton>
       </div>
     </>
   );

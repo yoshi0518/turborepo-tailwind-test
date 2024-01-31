@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { RouterIndexPage } from '@/features/router/RouterIndexPage';
+import { RouterIndexPage } from '@/features/router/pages/RouterIndexPage';
 
 import { DefaultLayout } from '@/layouts/default';
 
