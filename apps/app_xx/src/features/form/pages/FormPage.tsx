@@ -2,7 +2,7 @@ import { DevTool } from '@hookform/devtools';
 import { zodResolver } from '@hookform/resolvers/zod';
 import dayjs from 'dayjs';
 import Head from 'next/head';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useForm, FormProvider } from 'react-hook-form';
 import * as z from 'zod';
 

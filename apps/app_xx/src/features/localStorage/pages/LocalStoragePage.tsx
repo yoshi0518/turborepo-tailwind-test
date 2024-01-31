@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useState, useLayoutEffect, ChangeEvent } from 'react';
 
 import { NaBaseButton } from '@/components/NaBaseButton';
