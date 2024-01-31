@@ -22,7 +22,6 @@ import { appLng, mantineCustomTheme } from '@/config';
 
 import type { AppPropsWithLayout } from 'next/app';
 
-
 import '@/styles/global.css';
 import '@mantine/core/styles.css';
 import '@mantine/dates/styles.css';

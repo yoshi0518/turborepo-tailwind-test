@@ -1,4 +1,32 @@
 export const pagesPath = {
+  env: {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/env' as const, hash: url?.hash }),
+  },
+  form: {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/form' as const, hash: url?.hash }),
+  },
+  i18n: {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/i18n' as const, hash: url?.hash }),
+  },
+  local_storage: {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({
+      pathname: '/local-storage' as const,
+      hash: url?.hash,
+    }),
+  },
+  router: {
+    _id: (id: string | number) => ({
+      $url: (url?: { hash?: string | undefined } | undefined) => ({
+        pathname: '/router/[id]' as const,
+        query: { id },
+        hash: url?.hash,
+      }),
+    }),
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/router' as const, hash: url?.hash }),
+  },
+  ui: {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/ui' as const, hash: url?.hash }),
+  },
   $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/' as const, hash: url?.hash }),
 };
 

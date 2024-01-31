@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 import { NaBaseButton } from '@/components/NaBaseButton';
 
@@ -36,6 +36,9 @@ export const HomePage = () => {
         </NaBaseButton>
         <NaBaseButton variant="outline" onClick={() => router.push('/local-storage')} className="mr-2">
           LocalStoragePageへ移動
+        </NaBaseButton>
+        <NaBaseButton variant="outline" onClick={() => router.push('/router')} className="mr-2">
+          RouterPageへ移動
         </NaBaseButton>
       </div>
     </>
