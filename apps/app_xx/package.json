@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:next": "next dev",
-    "dev:bff": "aspida -c aspida-bff.config.js --watch",
+    "__dev:bff": "aspida -c aspida-bff.config.js --watch",
     "dev:path": "pathpida --enableStatic --ignorepath .gitignore --output ./src/libs/path --watch",
     "build": "run-s fmt lint build:bff build:fake build:path build:next",
     "build:next": "next build",
