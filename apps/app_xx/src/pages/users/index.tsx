@@ -1,12 +1,22 @@
+import { GetServerSideProps } from 'next';
 import { ReactElement } from 'react';
 
+import { readUsers } from '@/features/users/functions/readUsers';
 import { UserListPage } from '@/features/users/pages/UserListPage';
+import type { UserType } from '@/features/users/types';
 
 import { DefaultLayout } from '@/layouts/default';
 
 import type { NextPageWithLayout } from 'next';
 
-const Page: NextPageWithLayout = () => <UserListPage />;
+export const getServerSideProps: GetServerSideProps = async () => {
+  const users = await readUsers();
+  return { props: { fallbackData: users } };
+};
+
+const Page: NextPageWithLayout = ({ fallbackData }: { fallbackData: UserType[] }) => (
+  <UserListPage fallbackData={fallbackData} />
+);
 
 Page.getLayout = (page: ReactElement) => <DefaultLayout>{page}</DefaultLayout>;
 

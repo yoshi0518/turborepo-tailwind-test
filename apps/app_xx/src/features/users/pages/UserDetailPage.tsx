@@ -7,11 +7,12 @@ import { appTitle } from '@/config';
 
 import { useReadUser } from '../hooks/useReadUser';
 
+import type { UserType } from '../types';
 
-export const UserDetailPage = ({ id }: { id: string }) => {
+export const UserDetailPage = ({ id, fallbackData }: { id: string; fallbackData: UserType }) => {
   const title = `UserDetail:${id} | ${appTitle}`;
   const router = useRouter();
-  const { user, errorUser, isLoadingUser, mutateUser } = useReadUser(id);
+  const { user, errorUser, isLoadingUser, mutateUser } = useReadUser(id, fallbackData);
 
   if (errorUser) return <div>failed to load</div>;
   if (isLoadingUser) return <div>loading...</div>;

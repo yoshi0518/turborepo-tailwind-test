@@ -8,11 +8,12 @@ import { appTitle } from '@/config';
 
 import { useReadUsers } from '../hooks/useReadUsers';
 
+import type { UserType } from '../types';
 
-export const UserListPage = () => {
+export const UserListPage = ({ fallbackData }: { fallbackData: UserType[] }) => {
   const title = `UserList | ${appTitle}`;
   const router = useRouter();
-  const { users, errorUsers, isLoadingUsers, mutateUsers } = useReadUsers();
+  const { users, errorUsers, isLoadingUsers, mutateUsers } = useReadUsers(fallbackData);
 
   if (errorUsers) return <div>failed to load</div>;
   if (isLoadingUsers) return <div>loading...</div>;

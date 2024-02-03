@@ -8,11 +8,12 @@ import { appTitle } from '@/config';
 
 import { useReadPosts } from '../hooks/useReadPosts';
 
+import type { PostType } from '../types';
 
-export const PostListPage = () => {
+export const PostListPage = ({ fallbackData }: { fallbackData: PostType[] }) => {
   const title = `PostList | ${appTitle}`;
   const router = useRouter();
-  const { posts, errorPosts, isLoadingPosts, mutatePosts } = useReadPosts();
+  const { posts, errorPosts, isLoadingPosts, mutatePosts } = useReadPosts(fallbackData);
 
   if (errorPosts) return <div>failed to load</div>;
   if (isLoadingPosts) return <div>loading...</div>;
