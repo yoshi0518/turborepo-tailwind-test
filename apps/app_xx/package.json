@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "run-p dev:*",
     "dev:next": "next dev",
-    "dev:bff": "aspida -c aspida-bff.config.js --watch",
+    "__dev:bff": "aspida -c aspida-bff.config.js --watch",
     "dev:path": "pathpida --enableStatic --ignorepath .gitignore --output ./src/libs/path --watch",
     "build": "run-s fmt lint build:bff build:fake build:path build:next",
     "build:next": "next build",
@@ -27,6 +27,7 @@
     "@mantine/dates": "^7.4.2",
     "@mantine/hooks": "^7.4.2",
     "@mantine/notifications": "^7.4.2",
+    "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
     "i18next": "^23.7.18",
@@ -38,6 +39,7 @@
     "react-hook-form": "^7.49.3",
     "react-i18next": "^14.0.1",
     "sass": "^1.70.0",
+    "swr": "^2.2.4",
     "zod": "^3.22.4",
     "zod-i18n-map": "^2.25.0",
     "zustand": "^4.5.0"
