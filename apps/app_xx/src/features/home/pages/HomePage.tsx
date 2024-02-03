@@ -44,6 +44,16 @@ export const HomePage = () => {
           SsrPageへ移動
         </NaBaseButton>
       </div>
+      <div>
+        <NaBaseButton variant="outline" onClick={() => router.push('/users')} className="mr-2">
+          UserListPageへ移動
+        </NaBaseButton>
+      </div>
+      <div>
+        <NaBaseButton variant="outline" onClick={() => router.push('/posts')} className="mr-2">
+          PostListPageへ移動
+        </NaBaseButton>
+      </div>
     </>
   );
 };

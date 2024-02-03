@@ -12,11 +12,10 @@ export const fakeApiUrl = process.env.NEXT_PUBLIC_FAKE_API_URL;
 // LocalStorage
 export const storagePrefix = process.env.NEXT_PUBLIC_STORAGE_PREFIX;
 
-// TanstackQuery
-export const shortQueryStaleTime = Number(process.env.NEXT_PUBLIC_SHORT_QUERY_STALE_TIME);
-export const middleQueryStaleTime = Number(process.env.NEXT_PUBLIC_MIDDLE_QUERY_STALE_TIME);
-export const longQueryStaleTime = Number(process.env.NEXT_PUBLIC_LONG_QUERY_STALE_TIME);
-export const infinityQueryStaleTime = process.env.NEXT_PUBLIC_INFINITY_QUERY_STALE_TIME;
+// SWR
+export const shortDedupingInterval = Number(process.env.NEXT_PUBLIC_SHORT_DEDUPING_INTERVAL);
+export const middleDedupingInterval = Number(process.env.NEXT_PUBLIC_MIDDLE_DEDUPING_INTERVAL);
+export const longDedupingInterval = Number(process.env.NEXT_PUBLIC_LONG_DEDUPING_INTERVAL);
 
 // GoogleTagManager
 export const googleGtmId = process.env.NEXT_PUBLIC_GTM_ID;
