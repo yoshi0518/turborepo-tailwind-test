@@ -1,9 +1,7 @@
-import axios from 'axios';
-
-import { PostType } from '../types';
+import { bffApiClient } from '@/libs/bffApi';
 
 /** 投稿を取得 */
 export const readPost = async (id: string) => {
-  const response = await axios.get<PostType>(`http://localhost:3000/api/posts/${id}`);
-  return response.data;
+  const { body } = await bffApiClient.api.posts._id(id).get();
+  return body;
 };

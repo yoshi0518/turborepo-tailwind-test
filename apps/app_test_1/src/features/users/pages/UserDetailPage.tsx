@@ -5,19 +5,19 @@ import { NaBaseButton } from '@/components/NaBaseButton';
 
 import { pagesPath } from '@/libs/path/$path';
 
+import { appTitle } from '@/config';
+
 import { useReadUser } from '../hooks/useReadUser';
 
 import type { UserType } from '../types';
 
-import { appTitle } from '@/config';
-
 export const UserDetailPage = ({ id, fallbackData }: { id: string; fallbackData: UserType }) => {
   const title = `UserDetail:${id} | ${appTitle}`;
   const router = useRouter();
-  const { user, errorUser, isLoadingUser, mutateUser } = useReadUser(id, fallbackData);
+  const { user, error, isLoading, update } = useReadUser(id, fallbackData);
 
-  if (errorUser) return <div>failed to load</div>;
-  if (isLoadingUser) return <div>loading...</div>;
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return (
     <>
@@ -27,7 +27,7 @@ export const UserDetailPage = ({ id, fallbackData }: { id: string; fallbackData:
 
       <h1 className="text-lg font-semibold">UserDetailPage</h1>
       <main>
-        <NaBaseButton color="info" onClick={mutateUser}>
+        <NaBaseButton color="info" onClick={update}>
           Mutate
         </NaBaseButton>
         <div className="mt-2">

@@ -5,19 +5,19 @@ import { NaBaseButton } from '@/components/NaBaseButton';
 
 import { pagesPath } from '@/libs/path/$path';
 
+import { appTitle } from '@/config';
+
 import { useReadPost } from '../hooks/useReadPost';
 
 import type { PostType } from '../types';
 
-import { appTitle } from '@/config';
-
 export const PostDetailPage = ({ id, fallbackData }: { id: string; fallbackData: PostType }) => {
   const title = `PostDetail:${id} | ${appTitle}`;
   const router = useRouter();
-  const { post, errorPost, isLoadingPost, mutatePost } = useReadPost(id, fallbackData);
+  const { post, error, isLoading, update } = useReadPost(id, fallbackData);
 
-  if (errorPost) return <div>failed to load</div>;
-  if (isLoadingPost) return <div>loading...</div>;
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return (
     <>
@@ -27,7 +27,7 @@ export const PostDetailPage = ({ id, fallbackData }: { id: string; fallbackData:
 
       <h1 className="text-lg font-semibold">PostDetailPage</h1>
       <main>
-        <NaBaseButton color="info" onClick={mutatePost}>
+        <NaBaseButton color="info" onClick={update}>
           Mutate
         </NaBaseButton>
         <div className="mt-2">

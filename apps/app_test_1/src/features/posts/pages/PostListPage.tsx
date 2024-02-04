@@ -6,19 +6,19 @@ import { NaBaseButton } from '@/components/NaBaseButton';
 
 import { pagesPath } from '@/libs/path/$path';
 
+import { appTitle } from '@/config';
+
 import { useReadPosts } from '../hooks/useReadPosts';
 
 import type { PostType } from '../types';
 
-import { appTitle } from '@/config';
-
 export const PostListPage = ({ fallbackData }: { fallbackData: PostType[] }) => {
   const title = `PostList | ${appTitle}`;
   const router = useRouter();
-  const { posts, errorPosts, isLoadingPosts, mutatePosts } = useReadPosts(fallbackData);
+  const { posts, error, isLoading, update } = useReadPosts(fallbackData);
 
-  if (errorPosts) return <div>failed to load</div>;
-  if (isLoadingPosts) return <div>loading...</div>;
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return (
     <>
@@ -28,7 +28,7 @@ export const PostListPage = ({ fallbackData }: { fallbackData: PostType[] }) => 
 
       <h1 className="text-lg font-semibold">PostListPage</h1>
       <main>
-        <NaBaseButton color="info" onClick={mutatePosts}>
+        <NaBaseButton color="info" onClick={update}>
           Mutate
         </NaBaseButton>
         {posts.map((post, index) => (

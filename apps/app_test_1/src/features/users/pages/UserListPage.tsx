@@ -6,19 +6,19 @@ import { NaBaseButton } from '@/components/NaBaseButton';
 
 import { pagesPath } from '@/libs/path/$path';
 
+import { appTitle } from '@/config';
+
 import { useReadUsers } from '../hooks/useReadUsers';
 
 import type { UserType } from '../types';
 
-import { appTitle } from '@/config';
-
 export const UserListPage = ({ fallbackData }: { fallbackData: UserType[] }) => {
   const title = `UserList | ${appTitle}`;
   const router = useRouter();
-  const { users, errorUsers, isLoadingUsers, mutateUsers } = useReadUsers(fallbackData);
+  const { users, error, isLoading, update } = useReadUsers(fallbackData);
 
-  if (errorUsers) return <div>failed to load</div>;
-  if (isLoadingUsers) return <div>loading...</div>;
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
 
   return (
     <>
@@ -28,7 +28,7 @@ export const UserListPage = ({ fallbackData }: { fallbackData: UserType[] }) => 
 
       <h1 className="text-lg font-semibold">UserListPage</h1>
       <main>
-        <NaBaseButton color="info" onClick={mutateUsers}>
+        <NaBaseButton color="info" onClick={update}>
           Mutate
         </NaBaseButton>
         {users.map((user, index) => (

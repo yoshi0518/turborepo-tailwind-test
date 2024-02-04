@@ -11,15 +11,15 @@ import type { UserType } from '../types';
 export const useReadUsers = (fallbackData: UserType[]) => {
   const {
     data: users,
-    error: errorUsers,
-    isLoading: isLoadingUsers,
+    error,
+    isLoading,
   } = useSWR(userKey.listAll(), readUsers, {
     dedupingInterval: middleDedupingInterval,
     fallbackData,
   });
   const { mutate } = useSWRConfig();
 
-  const mutateUsers = () => mutate(userKey.listAll());
+  const update = () => mutate(userKey.listAll());
 
-  return { users, errorUsers, isLoadingUsers, mutateUsers };
+  return { users, error, isLoading, update };
 };

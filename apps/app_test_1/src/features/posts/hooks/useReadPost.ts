@@ -11,15 +11,15 @@ import type { PostType } from '../types';
 export const useReadPost = (id: string, fallbackData: PostType) => {
   const {
     data: post,
-    error: errorPost,
-    isLoading: isLoadingPost,
+    error,
+    isLoading,
   } = useSWR(postKey.detail(id), () => readPost(id), {
     dedupingInterval: shortDedupingInterval,
     fallbackData,
   });
   const { mutate } = useSWRConfig();
 
-  const mutatePost = () => mutate(postKey.detail(id));
+  const update = () => mutate(postKey.detail(id));
 
-  return { post, errorPost, isLoadingPost, mutatePost };
+  return { post, error, isLoading, update };
 };

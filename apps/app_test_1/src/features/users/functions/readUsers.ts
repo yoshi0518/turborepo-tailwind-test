@@ -1,9 +1,7 @@
-import axios from 'axios';
-
-import { UserType } from '../types';
+import { bffApiClient } from '@/libs/bffApi';
 
 /** ユーザー一覧を取得 */
 export const readUsers = async () => {
-  const response = await axios.get<UserType[]>('http://localhost:3000/api/users');
-  return response.data;
+  const { body } = await bffApiClient.api.users.get();
+  return body;
 };

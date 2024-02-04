@@ -23,9 +23,9 @@ import { NaTextarea } from '@/components/NaTextarea';
 
 import { pagesPath } from '@/libs/path/$path';
 
-import { FormArray } from './FormArray';
-
 import { appTitle } from '@/config';
+
+import { FormArray } from './FormArray';
 
 const LoginSchema = z
   .object({
