@@ -6,9 +6,6 @@ export const appLng = process.env.NEXT_PUBLIC_APP_LNG;
 // BffApi
 export const bffApiUrl = process.env.NEXT_PUBLIC_BFF_API_URL;
 
-// FakeApi
-export const fakeApiUrl = process.env.NEXT_PUBLIC_FAKE_API_URL;
-
 // LocalStorage
 export const storagePrefix = process.env.NEXT_PUBLIC_STORAGE_PREFIX;
 

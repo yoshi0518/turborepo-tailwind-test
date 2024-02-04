@@ -12,5 +12,4 @@ logs
 *.local
 .DS_Store
 src/libs/bffApi
-src/libs/fakeApi
 public/manifest.json

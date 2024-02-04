@@ -7,7 +7,7 @@ import { withZod } from '@/utils/zod';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const handleGet = withZod(z.object({}), async (req, res) => {
+const handleGet = withZod(z.object({}), async (req: NextApiRequest, res: NextApiResponse) => {
   const response = await fetch('https://jsonplaceholder.typicode.com/users');
 
   if (response.status !== 200) res.status(500).json({ message: response.statusText });
