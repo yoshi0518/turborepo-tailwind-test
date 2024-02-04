@@ -35,6 +35,7 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@next/next/no-html-link-for-pages': 'off',
     'import/no-unresolved': 'off',
+    'import/named': 'off',
     'import/order': [
       'error',
       {
