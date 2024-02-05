@@ -5,6 +5,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import Backend from 'i18next-http-backend';
 import { Noto_Sans_JP } from 'next/font/google';
 import Script from 'next/script';
+import { SessionProvider } from 'next-auth/react';
 import { initReactI18next } from 'react-i18next';
 import { z } from 'zod';
 import { zodI18nMap } from 'zod-i18n-map';
@@ -18,9 +19,9 @@ import indexLocalesJa from '@/utils/i18n/locales/ja/index.json';
 import zodLocalesJa from '@/utils/i18n/locales/ja/zod.json';
 import { getStorageItem } from '@/utils/localStorage';
 
-import { appLng, mantineCustomTheme } from '@/config';
-
 import type { AppPropsWithLayout } from 'next/app';
+
+import { appLng, mantineCustomTheme } from '@/config';
 
 import '@/styles/global.css';
 import '@mantine/core/styles.css';
@@ -67,7 +68,7 @@ const notificationsProps: NaNotificationsProps = {
   zIndex: 1000,
 };
 
-const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page);
   z.setErrorMap(zodI18nMap);
 
@@ -75,8 +76,10 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     <>
       <div className={clsx('select-none p-2 text-sm', notoSansJp.className)}>
         <MantineProvider theme={mantineCustomTheme}>
-          <Component {...pageProps} />
-          <NaNotifications {...notificationsProps} />
+          <SessionProvider session={session}>
+            <Component {...pageProps} />
+            <NaNotifications {...notificationsProps} />
+          </SessionProvider>
         </MantineProvider>
       </div>
       <Script src="/main.js" defer />
