@@ -19,9 +19,9 @@ import indexLocalesJa from '@/utils/i18n/locales/ja/index.json';
 import zodLocalesJa from '@/utils/i18n/locales/ja/zod.json';
 import { getStorageItem } from '@/utils/localStorage';
 
-import type { AppPropsWithLayout } from 'next/app';
-
 import { appLng, mantineCustomTheme } from '@/config';
+
+import type { AppPropsWithLayout } from 'next/app';
 
 import '@/styles/global.css';
 import '@mantine/core/styles.css';

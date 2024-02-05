@@ -1,4 +1,4 @@
-import { LogoutPage } from '@/features/auth/pages/logoutPage';
+import { LogoutPage } from '@/features/auth/pages/LogoutPage';
 
 const Page = () => <LogoutPage />;
 
