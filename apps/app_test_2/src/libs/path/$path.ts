@@ -1,25 +1,25 @@
 export const pagesPath = {
-  authors: {
-    _id: (id: string | number) => ({
-      $url: (url?: { hash?: string | undefined } | undefined) => ({
-        pathname: '/authors/[id]' as const,
-        query: { id },
-        hash: url?.hash,
-      }),
-    }),
-    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/authors' as const, hash: url?.hash }),
+  "auth": {
+    "login": {
+      $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/auth/login' as const, hash: url?.hash })
+    },
+    "logout": {
+      $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/auth/logout' as const, hash: url?.hash })
+    }
   },
-  users: {
+  "authors": {
     _id: (id: string | number) => ({
-      $url: (url?: { hash?: string | undefined } | undefined) => ({
-        pathname: '/users/[id]' as const,
-        query: { id },
-        hash: url?.hash,
-      }),
+      $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/authors/[id]' as const, query: { id }, hash: url?.hash })
     }),
-    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/users' as const, hash: url?.hash }),
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/authors' as const, hash: url?.hash })
   },
-  $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/' as const, hash: url?.hash }),
+  "users": {
+    _id: (id: string | number) => ({
+      $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/users/[id]' as const, query: { id }, hash: url?.hash })
+    }),
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/users' as const, hash: url?.hash })
+  },
+  $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/' as const, hash: url?.hash })
 };
 
 export type PagesPath = typeof pagesPath;
@@ -33,7 +33,7 @@ export const staticPath = {
   main_js: '/main.js',
   manifest_json: '/manifest.json',
   robots_txt: '/robots.txt',
-  sw_js: '/sw.js',
+  sw_js: '/sw.js'
 } as const;
 
 export type StaticPath = typeof staticPath;
