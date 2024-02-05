@@ -1,4 +1,4 @@
-import { LoginPage } from '@/features/auth/pages/loginPage';
+import { LoginPage } from '@/features/auth/pages/LoginPage';
 
 const Page = () => <LoginPage />;
 

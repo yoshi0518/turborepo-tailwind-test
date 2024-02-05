@@ -11,16 +11,24 @@ const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? '',
     }),
   ],
+  session: {
+    strategy: 'jwt',
+  },
+  // pages: {
+  //   signIn: '/auth/login',
+  //   signOut: '/auth/logout',
+  // },
   callbacks: {
+    redirect: () => '/',
     signIn: ({ user }) => {
       // メールアドレスが指定ドメインの場合はログイン画面へリダイレクト
       if (user.email) {
         const domain = user.email.split('@')[1];
         const allowDomains = process.env.NEXTAUTH_ALLOWED_DOMAINS.split(',');
-        return allowDomains.includes(domain) ? '/' : 'http://example.com';
+        if (allowDomains.includes(domain)) return true;
       }
 
-      return 'http://example.com';
+      return false;
     },
   },
 };
