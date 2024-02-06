@@ -8,17 +8,18 @@ import { DefaultLayout } from '@/layouts/default';
 
 import type { Author } from '@/libs/fakeApi/@types';
 
-import type { NextPageWithLayout } from 'next';
+import type { CustomNextPage } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const authors = await readAuthors();
   return { props: { fallbackData: authors } };
 };
 
-const Page: NextPageWithLayout = ({ fallbackData }: { fallbackData: Author[] }) => (
+const Page: CustomNextPage = ({ fallbackData }: { fallbackData: Author[] }) => (
   <AuthorListPage fallbackData={fallbackData} />
 );
 
 Page.getLayout = (page: ReactElement) => <DefaultLayout>{page}</DefaultLayout>;
+Page.requireLogin = true;
 
 export default Page;

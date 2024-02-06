@@ -9,7 +9,7 @@ import { DefaultLayout } from '@/layouts/default';
 
 import type { Author } from '@/libs/fakeApi/@types';
 
-import type { NextPageWithLayout } from 'next';
+import type { CustomNextPage } from 'next';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
@@ -17,12 +17,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: { fallbackData: author } };
 };
 
-const Page: NextPageWithLayout = ({ fallbackData }: { fallbackData: Author }) => {
+const Page: CustomNextPage = ({ fallbackData }: { fallbackData: Author }) => {
   const { id } = useRouter().query;
 
   return <AuthorDetailPage id={Number(id)} fallbackData={fallbackData} />;
 };
 
 Page.getLayout = (page: ReactElement) => <DefaultLayout>{page}</DefaultLayout>;
+Page.requireLogin = true;
 
 export default Page;

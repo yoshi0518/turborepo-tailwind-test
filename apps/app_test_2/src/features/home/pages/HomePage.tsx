@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
 import { NaBaseButton } from '@/components/NaBaseButton';
 
@@ -13,8 +13,8 @@ export const HomePage = () => {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  console.log('=== Auth.js ===');
-  console.log({ session, status });
+  // console.log('=== Auth.js ===');
+  // console.log({ session, status });
 
   return (
     <>
@@ -23,30 +23,19 @@ export const HomePage = () => {
       </Head>
 
       <h1 className="text-lg font-semibold">HomePage</h1>
-      {/* <div>ようこそ, {session.user && session.user.email}</div> */}
+      <main className="p-2">
+        {status === 'authenticated' ? (
+          <>
+            <div>Name：{session.user.name}</div>
+            <div>Email：{session.user.email}</div>
+            <div>Image：{session.user.image}</div>
+            <div>Expires：{session.expires}</div>
+          </>
+        ) : (
+          <div>Loading ...</div>
+        )}
+      </main>
 
-      {/* {
-        // セッションがある場合
-        session && (
-          <main>
-            <h1>ようこそ, {session.user && session.user.email}</h1>
-            <NaBaseButton color="default" onClick={() => signOut()}>
-              ログアウト
-            </NaBaseButton>
-          </main>
-        )
-      }
-      {
-        // セッションがない場合
-        !session && (
-          <main>
-            <p>ログインしていません</p>
-            <NaBaseButton color="info" onClick={() => signIn()}>
-              ログイン
-            </NaBaseButton>
-          </main>
-        )
-      } */}
       <div>
         <NaBaseButton variant="outline" onClick={() => router.push(pagesPath.users.$url())} className="mr-2">
           UserListPageへ移動
@@ -55,6 +44,11 @@ export const HomePage = () => {
       <div>
         <NaBaseButton variant="outline" onClick={() => router.push(pagesPath.authors.$url())} className="mr-2">
           AuthorListPageへ移動
+        </NaBaseButton>
+      </div>
+      <div>
+        <NaBaseButton color="info" onClick={async () => await signOut({ callbackUrl: '/login?onLogout' })}>
+          ログアウト
         </NaBaseButton>
       </div>
     </>
