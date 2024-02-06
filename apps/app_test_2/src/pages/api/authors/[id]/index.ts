@@ -1,11 +1,21 @@
 import { NextApiHandler } from 'next';
+import { getServerSession } from 'next-auth';
 
 import { fakeApiClient } from '@/libs/fakeApi';
 import type { Author } from '@/libs/fakeApi/@types';
 
+import { authOptions } from '../../auth/[...nextauth]';
+
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const handleGet = async (req: NextApiRequest, res: NextApiResponse) => {
+  const session = await getServerSession(req, res, authOptions);
+
+  if (!session) {
+    res.status(401).json({ message: 'You must be logged in.' });
+    return;
+  }
+
   const id = req.query.id;
   const { body, status } = await fakeApiClient.api.v1.Authors._id(Number(id)).get();
 

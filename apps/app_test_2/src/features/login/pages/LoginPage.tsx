@@ -17,7 +17,7 @@ export const LoginPage = () => {
       <h1 className="text-lg font-semibold">LoginPage</h1>
 
       <main>
-        <NaBaseButton color="info" onClick={() => signIn()}>
+        <NaBaseButton color="info" onClick={() => signIn(undefined, { callbackUrl: '/' })}>
           ログイン
         </NaBaseButton>
       </main>

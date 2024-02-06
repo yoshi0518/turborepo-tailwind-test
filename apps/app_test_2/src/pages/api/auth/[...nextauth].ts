@@ -3,7 +3,7 @@ import GoogleProvider from 'next-auth/providers/google';
 
 import type { NextAuthOptions } from 'next-auth';
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GoogleProvider({
@@ -14,12 +14,7 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt',
   },
-  // pages: {
-  //   signIn: '/auth/login',
-  //   signOut: '/auth/logout',
-  // },
   callbacks: {
-    redirect: () => '/',
     signIn: ({ user }) => {
       // メールアドレスが指定ドメインの場合はログイン画面へリダイレクト
       if (user.email) {

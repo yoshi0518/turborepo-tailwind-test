@@ -1,17 +1,12 @@
 export const pagesPath = {
-  "auth": {
-    "login": {
-      $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/auth/login' as const, hash: url?.hash })
-    },
-    "logout": {
-      $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/auth/logout' as const, hash: url?.hash })
-    }
-  },
   "authors": {
     _id: (id: string | number) => ({
       $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/authors/[id]' as const, query: { id }, hash: url?.hash })
     }),
     $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/authors' as const, hash: url?.hash })
+  },
+  "login": {
+    $url: (url?: { hash?: string | undefined } | undefined) => ({ pathname: '/login' as const, hash: url?.hash })
   },
   "users": {
     _id: (id: string | number) => ({

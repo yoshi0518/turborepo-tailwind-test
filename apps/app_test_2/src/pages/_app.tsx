@@ -13,6 +13,8 @@ import { zodI18nMap } from 'zod-i18n-map';
 import { NaNotifications } from '@/components/NaNotifications';
 import type { NaNotificationsProps } from '@/components/NaNotifications';
 
+import { LoginGuard } from '@/features/login/components/LoginGuard';
+
 import indexLocalesEn from '@/utils/i18n/locales/en/index.json';
 import zodLocalesEn from '@/utils/i18n/locales/en/zod.json';
 import indexLocalesJa from '@/utils/i18n/locales/ja/index.json';
@@ -21,7 +23,7 @@ import { getStorageItem } from '@/utils/localStorage';
 
 import { appLng, mantineCustomTheme } from '@/config';
 
-import type { AppPropsWithLayout } from 'next/app';
+import type { CustomAppProps } from 'next/app';
 
 import '@/styles/global.css';
 import '@mantine/core/styles.css';
@@ -68,7 +70,7 @@ const notificationsProps: NaNotificationsProps = {
   zIndex: 1000,
 };
 
-const App = ({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLayout) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: CustomAppProps) => {
   const getLayout = Component.getLayout ?? ((page) => page);
   z.setErrorMap(zodI18nMap);
 
@@ -77,7 +79,13 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppPropsWithLa
       <div className={clsx('select-none p-2 text-sm', notoSansJp.className)}>
         <MantineProvider theme={mantineCustomTheme}>
           <SessionProvider session={session}>
-            <Component {...pageProps} />
+            {Component.requireLogin ? (
+              <LoginGuard>
+                <Component {...pageProps} />
+              </LoginGuard>
+            ) : (
+              <Component {...pageProps} />
+            )}
             <NaNotifications {...notificationsProps} />
           </SessionProvider>
         </MantineProvider>
