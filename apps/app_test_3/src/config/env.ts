@@ -6,6 +6,10 @@ export const appLng = process.env.NEXT_PUBLIC_APP_LNG;
 // BffApi
 export const bffApiUrl = process.env.NEXT_PUBLIC_BFF_API_URL;
 
+// Hasura
+export const hasuraApiUrl = process.env.NEXT_PUBLIC_HASURA_API_URL;
+export const hasuraAdminSecret = process.env.NEXT_PUBLIC_HASURA_ADMIN_SECRET;
+
 // LocalStorage
 export const storagePrefix = process.env.NEXT_PUBLIC_STORAGE_PREFIX;
 
