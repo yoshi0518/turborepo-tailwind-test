@@ -7,7 +7,6 @@ import { userKey } from '../hooks/key';
 
 import type { UserType } from '../types';
 
-
 /** ユーザー一覧を取得 */
 export const useReadUsers = (fallbackData: UserType[]) => {
   const {

@@ -362,6 +362,181 @@ importers:
         specifier: ^5
         version: 5.3.3
 
+  apps/app_test_3:
+    dependencies:
+      '@aspida/axios':
+        specifier: ^1.14.0
+        version: 1.14.0(aspida@1.14.0)(axios@1.6.7)
+      '@headlessui/react':
+        specifier: ^1.7.18
+        version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
+      '@hookform/resolvers':
+        specifier: ^3.3.4
+        version: 3.3.4(react-hook-form@7.50.0)
+      '@mantine/core':
+        specifier: ^7.4.2
+        version: 7.5.1(@mantine/hooks@7.5.1)(@types/react@18.2.52)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/dates':
+        specifier: ^7.4.2
+        version: 7.5.1(@mantine/core@7.5.1)(@mantine/hooks@7.5.1)(dayjs@1.11.10)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks':
+        specifier: ^7.4.2
+        version: 7.5.1(react@18.2.0)
+      '@mantine/notifications':
+        specifier: ^7.4.2
+        version: 7.5.1(@mantine/core@7.5.1)(@mantine/hooks@7.5.1)(react-dom@18.2.0)(react@18.2.0)
+      aspida:
+        specifier: ^1.14.0
+        version: 1.14.0
+      axios:
+        specifier: ^1.6.7
+        version: 1.6.7
+      clsx:
+        specifier: ^2.1.0
+        version: 2.1.0
+      dayjs:
+        specifier: ^1.11.10
+        version: 1.11.10
+      graphql-request:
+        specifier: ^6.1.0
+        version: 6.1.0(graphql@16.8.1)
+      i18next:
+        specifier: ^23.7.18
+        version: 23.8.2
+      i18next-browser-languagedetector:
+        specifier: ^7.2.0
+        version: 7.2.0
+      i18next-http-backend:
+        specifier: ^2.4.2
+        version: 2.4.3
+      next:
+        specifier: 14.1.0
+        version: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)(sass@1.70.0)
+      react:
+        specifier: ^18
+        version: 18.2.0
+      react-dom:
+        specifier: ^18
+        version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.49.3
+        version: 7.50.0(react@18.2.0)
+      react-i18next:
+        specifier: ^14.0.1
+        version: 14.0.1(i18next@23.8.2)(react-dom@18.2.0)(react@18.2.0)
+      sass:
+        specifier: ^1.70.0
+        version: 1.70.0
+      swr:
+        specifier: ^2.2.4
+        version: 2.2.4(react@18.2.0)
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
+      zod-i18n-map:
+        specifier: ^2.25.0
+        version: 2.27.0(i18next@23.8.2)(zod@3.22.4)
+      zustand:
+        specifier: ^4.5.0
+        version: 4.5.0(@types/react@18.2.52)(react@18.2.0)
+    devDependencies:
+      '@hookform/devtools':
+        specifier: ^4.3.1
+        version: 4.3.1(@types/react@18.2.52)(react-dom@18.2.0)(react@18.2.0)
+      '@project/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      '@project/prettier-config':
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
+      '@project/tailwind-config':
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      '@project/typescript-config':
+        specifier: workspace:*
+        version: link:../../packages/typescript-config
+      '@storybook/addon-essentials':
+        specifier: ^7.6.10
+        version: 7.6.12(@types/react-dom@18.2.18)(@types/react@18.2.52)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/addon-interactions':
+        specifier: ^7.6.10
+        version: 7.6.12
+      '@storybook/addon-links':
+        specifier: ^7.6.10
+        version: 7.6.12(react@18.2.0)
+      '@storybook/addon-onboarding':
+        specifier: 1.0.11
+        version: 1.0.11(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/blocks':
+        specifier: ^7.6.10
+        version: 7.6.12(@types/react-dom@18.2.18)(@types/react@18.2.52)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/react':
+        specifier: ^7.6.10
+        version: 7.6.12(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
+      '@storybook/react-vite':
+        specifier: ^7.6.10
+        version: 7.6.12(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@4.5.2)
+      '@storybook/testing-library':
+        specifier: ^0.2.2
+        version: 0.2.2
+      '@types/node':
+        specifier: ^20
+        version: 20.11.16
+      '@types/react':
+        specifier: ^18
+        version: 18.2.52
+      '@types/react-dom':
+        specifier: ^18
+        version: 18.2.18
+      autoprefixer:
+        specifier: ^10.0.1
+        version: 10.4.17(postcss@8.4.33)
+      eslint:
+        specifier: ^8
+        version: 8.56.0
+      eslint-config-next:
+        specifier: 14.1.0
+        version: 14.1.0(eslint@8.56.0)(typescript@5.3.3)
+      eslint-plugin-storybook:
+        specifier: ^0.6.15
+        version: 0.6.15(eslint@8.56.0)(typescript@5.3.3)
+      npm-run-all2:
+        specifier: ^6.1.1
+        version: 6.1.2
+      openapi2aspida:
+        specifier: ^0.23.2
+        version: 0.23.2
+      pathpida:
+        specifier: ^0.22.0
+        version: 0.22.0
+      postcss:
+        specifier: ^8
+        version: 8.4.33
+      postcss-preset-mantine:
+        specifier: ^1.12.3
+        version: 1.13.0(postcss@8.4.33)
+      postcss-simple-vars:
+        specifier: ^7.0.1
+        version: 7.0.1(postcss@8.4.33)
+      prettier:
+        specifier: ^3.2.4
+        version: 3.2.4
+      prettier-plugin-sort-json:
+        specifier: ^3.1.0
+        version: 3.1.0(prettier@3.2.4)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.5.11
+        version: 0.5.11(prettier@3.2.4)
+      storybook:
+        specifier: ^7.6.10
+        version: 7.6.12
+      tailwindcss:
+        specifier: ^3.3.0
+        version: 3.4.1
+      typescript:
+        specifier: ^5
+        version: 5.3.3
+
   packages/eslint-config:
     devDependencies:
       '@project/prettier-config':
@@ -2169,6 +2344,14 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+
+  /@graphql-typed-document-node/core@3.2.0(graphql@16.8.1):
+    resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      graphql: 16.8.1
+    dev: false
 
   /@headlessui/react@1.7.18(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ==}
@@ -5254,6 +5437,14 @@ packages:
       yaml: 1.10.2
     dev: true
 
+  /cross-fetch@3.1.8:
+    resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
+    dependencies:
+      node-fetch: 2.7.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /cross-fetch@4.0.0:
     resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
     dependencies:
@@ -6657,6 +6848,23 @@ packages:
   /graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
+
+  /graphql-request@6.1.0(graphql@16.8.1):
+    resolution: {integrity: sha512-p+XPfS4q7aIpKVcgmnZKhMNqhltk20hfXtkaIkTfjjmiKMJ5xrt5c743cL03y/K7y1rg3WrIC49xGiEQ4mxdNw==}
+    peerDependencies:
+      graphql: 14 - 16
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.8.1)
+      cross-fetch: 3.1.8
+      graphql: 16.8.1
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /graphql@16.8.1:
+    resolution: {integrity: sha512-59LZHPdGZVh695Ud9lRzPBVTtlX9ZCV150Er2W43ro37wVof0ctenSaskPPjN7lVTIN8mSZt8PHUNKZuNQUuxw==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
+    dev: false
 
   /gunzip-maybe@1.4.2:
     resolution: {integrity: sha512-4haO1M4mLO91PW57BMsDFf75UmwoRX0GkdD+Faw+Lr+r/OZrOCS0pIBwOL1xCKQqnQzbNFGgK2V2CpBUPeFNTw==}
