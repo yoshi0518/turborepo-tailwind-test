@@ -17,10 +17,12 @@
     "lint": "eslint --ext \".js,.jsx,.ts,.tsx\" --fix .",
     "fmt": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@aspida/axios": "^1.14.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@headlessui/react": "^1.7.18",
     "@hookform/resolvers": "^3.3.4",
     "@mantine/core": "^7.4.2",
@@ -31,6 +33,7 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
+    "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "i18next": "^23.7.18",
     "i18next-browser-languagedetector": "^7.2.0",
@@ -47,7 +50,11 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "^4.2.2",
+    "@graphql-codegen/introspection": "^4.0.2",
     "@hookform/devtools": "^4.3.1",
+    "@parcel/watcher": "^2.4.0",
     "@project/eslint-config": "workspace:*",
     "@project/prettier-config": "workspace:*",
     "@project/tailwind-config": "workspace:*",
@@ -78,7 +85,8 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "storybook": "^7.6.10",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   },
   "prettier": "@project/prettier-config/next"
 }
