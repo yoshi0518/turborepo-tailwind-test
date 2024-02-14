@@ -9,6 +9,7 @@ import { hasuraApiUrl, hasuraAdminSecret } from '@/config';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+
 const client = new GraphQLClient(hasuraApiUrl, {
   headers: {
     'content-type': 'application/json',

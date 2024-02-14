@@ -16,10 +16,36 @@ const config: CodegenConfig = {
   generates: {
     './src/libs/gql/': {
       preset: 'client',
+      plugins: [
+        {
+          // Custom Scalar の branded type 定義
+          add: {
+            content: `export type DateString = string & { readonly __brand: unique symbol }`,
+          },
+        },
+      ],
+      config: {
+        useTypeImports: true,
+        skipTypename: true,
+        arrayInputCoercion: true,
+        avoidOptionals: {
+          field: true,
+          inputValue: false,
+          object: true,
+          defaultValue: false,
+        },
+        scalars: {
+          Date: 'DateString',
+        },
+        enumsAsTypes: true,
+      },
     },
     './graphql.schema.json': {
       plugins: ['introspection'],
     },
+  },
+  hooks: {
+    afterAllFileWrite: ['prettier --write'],
   },
 };
 
