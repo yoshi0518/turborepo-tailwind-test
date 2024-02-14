@@ -12,4 +12,5 @@ logs
 *.local
 .DS_Store
 src/libs/bffApi
+src/libs/gql
 public/manifest.json

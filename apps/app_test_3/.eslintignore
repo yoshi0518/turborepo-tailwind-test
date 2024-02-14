@@ -37,3 +37,6 @@ next-env.d.ts
 
 # aspida auto generate
 src/libs/bffApi
+
+# graphql auto generate
+src/libs/gql
