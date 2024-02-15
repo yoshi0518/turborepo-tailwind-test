@@ -7,16 +7,16 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: 
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
-export type DateString = string & { readonly __brand: unique symbol }
+export type DateString = string & { readonly __brand: unique symbol };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
-  timestamptz: { input: any; output: any; }
-  uuid: { input: any; output: any; }
+  ID: { input: string; output: string };
+  String: { input: string; output: string };
+  Boolean: { input: boolean; output: boolean };
+  Int: { input: number; output: number };
+  Float: { input: number; output: number };
+  timestamptz: { input: any; output: any };
+  uuid: { input: any; output: any };
 };
 
 /** Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'. */
@@ -82,7 +82,6 @@ export type Groups = {
   users_aggregate: Users_Aggregate;
 };
 
-
 /** columns and relationships of "groups" */
 export type GroupsUsersArgs = {
   distinct_on: InputMaybe<Array<Users_Select_Column>>;
@@ -91,7 +90,6 @@ export type GroupsUsersArgs = {
   order_by: InputMaybe<Array<Users_Order_By>>;
   where: InputMaybe<Users_Bool_Exp>;
 };
-
 
 /** columns and relationships of "groups" */
 export type GroupsUsers_AggregateArgs = {
@@ -115,7 +113,6 @@ export type Groups_Aggregate_Fields = {
   min: Maybe<Groups_Min_Fields>;
 };
 
-
 /** aggregate fields of "groups" */
 export type Groups_Aggregate_FieldsCountArgs = {
   columns: InputMaybe<Array<Groups_Select_Column>>;
@@ -136,7 +133,7 @@ export type Groups_Bool_Exp = {
 /** unique or primary key constraints on table "groups" */
 export type Groups_Constraint =
   /** unique or primary key constraint on columns "id" */
-  | 'groups_pkey';
+  'groups_pkey';
 
 /** input type for inserting data into table "groups" */
 export type Groups_Insert_Input = {
@@ -292,54 +289,45 @@ export type Mutation_Root = {
   update_users_many: Maybe<Array<Maybe<Users_Mutation_Response>>>;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_GroupsArgs = {
   where: Groups_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Groups_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Profile_UsersArgs = {
   where: Profile_Users_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Profile_Users_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_ProfilesArgs = {
   where: Profiles_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Profiles_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_UsersArgs = {
   where: Users_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Users_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_GroupsArgs = {
@@ -347,13 +335,11 @@ export type Mutation_RootInsert_GroupsArgs = {
   on_conflict: InputMaybe<Groups_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Groups_OneArgs = {
   object: Groups_Insert_Input;
   on_conflict: InputMaybe<Groups_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Profile_UsersArgs = {
@@ -361,13 +347,11 @@ export type Mutation_RootInsert_Profile_UsersArgs = {
   on_conflict: InputMaybe<Profile_Users_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Profile_Users_OneArgs = {
   object: Profile_Users_Insert_Input;
   on_conflict: InputMaybe<Profile_Users_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_ProfilesArgs = {
@@ -375,13 +359,11 @@ export type Mutation_RootInsert_ProfilesArgs = {
   on_conflict: InputMaybe<Profiles_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Profiles_OneArgs = {
   object: Profiles_Insert_Input;
   on_conflict: InputMaybe<Profiles_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_UsersArgs = {
@@ -389,13 +371,11 @@ export type Mutation_RootInsert_UsersArgs = {
   on_conflict: InputMaybe<Users_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Users_OneArgs = {
   object: Users_Insert_Input;
   on_conflict: InputMaybe<Users_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_GroupsArgs = {
@@ -403,19 +383,16 @@ export type Mutation_RootUpdate_GroupsArgs = {
   where: Groups_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Groups_By_PkArgs = {
   _set: InputMaybe<Groups_Set_Input>;
   pk_columns: Groups_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Groups_ManyArgs = {
   updates: Array<Groups_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Profile_UsersArgs = {
@@ -423,19 +400,16 @@ export type Mutation_RootUpdate_Profile_UsersArgs = {
   where: Profile_Users_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Profile_Users_By_PkArgs = {
   _set: InputMaybe<Profile_Users_Set_Input>;
   pk_columns: Profile_Users_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Profile_Users_ManyArgs = {
   updates: Array<Profile_Users_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_ProfilesArgs = {
@@ -443,19 +417,16 @@ export type Mutation_RootUpdate_ProfilesArgs = {
   where: Profiles_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Profiles_By_PkArgs = {
   _set: InputMaybe<Profiles_Set_Input>;
   pk_columns: Profiles_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Profiles_ManyArgs = {
   updates: Array<Profiles_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_UsersArgs = {
@@ -463,13 +434,11 @@ export type Mutation_RootUpdate_UsersArgs = {
   where: Users_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Users_By_PkArgs = {
   _set: InputMaybe<Users_Set_Input>;
   pk_columns: Users_Pk_Columns_Input;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Users_ManyArgs = {
@@ -526,7 +495,6 @@ export type Profile_Users_Aggregate_Fields = {
   min: Maybe<Profile_Users_Min_Fields>;
 };
 
-
 /** aggregate fields of "profile_users" */
 export type Profile_Users_Aggregate_FieldsCountArgs = {
   columns: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -562,7 +530,7 @@ export type Profile_Users_Bool_Exp = {
 /** unique or primary key constraints on table "profile_users" */
 export type Profile_Users_Constraint =
   /** unique or primary key constraint on columns "id" */
-  | 'profile_users_pkey';
+  'profile_users_pkey';
 
 /** input type for inserting data into table "profile_users" */
 export type Profile_Users_Insert_Input = {
@@ -689,7 +657,6 @@ export type Profiles = {
   user: Maybe<Users>;
 };
 
-
 /** columns and relationships of "profiles" */
 export type ProfilesProfile_UsersArgs = {
   distinct_on: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -698,7 +665,6 @@ export type ProfilesProfile_UsersArgs = {
   order_by: InputMaybe<Array<Profile_Users_Order_By>>;
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
-
 
 /** columns and relationships of "profiles" */
 export type ProfilesProfile_Users_AggregateArgs = {
@@ -722,7 +688,6 @@ export type Profiles_Aggregate_Fields = {
   min: Maybe<Profiles_Min_Fields>;
 };
 
-
 /** aggregate fields of "profiles" */
 export type Profiles_Aggregate_FieldsCountArgs = {
   columns: InputMaybe<Array<Profiles_Select_Column>>;
@@ -744,7 +709,7 @@ export type Profiles_Bool_Exp = {
 /** unique or primary key constraints on table "profiles" */
 export type Profiles_Constraint =
   /** unique or primary key constraint on columns "id" */
-  | 'profiles_pkey';
+  'profiles_pkey';
 
 /** input type for inserting data into table "profiles" */
 export type Profiles_Insert_Input = {
@@ -869,7 +834,6 @@ export type Query_Root = {
   users_by_pk: Maybe<Users>;
 };
 
-
 export type Query_RootGroupsArgs = {
   distinct_on: InputMaybe<Array<Groups_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -877,7 +841,6 @@ export type Query_RootGroupsArgs = {
   order_by: InputMaybe<Array<Groups_Order_By>>;
   where: InputMaybe<Groups_Bool_Exp>;
 };
-
 
 export type Query_RootGroups_AggregateArgs = {
   distinct_on: InputMaybe<Array<Groups_Select_Column>>;
@@ -887,11 +850,9 @@ export type Query_RootGroups_AggregateArgs = {
   where: InputMaybe<Groups_Bool_Exp>;
 };
 
-
 export type Query_RootGroups_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Query_RootProfile_UsersArgs = {
   distinct_on: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -901,7 +862,6 @@ export type Query_RootProfile_UsersArgs = {
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Query_RootProfile_Users_AggregateArgs = {
   distinct_on: InputMaybe<Array<Profile_Users_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -910,11 +870,9 @@ export type Query_RootProfile_Users_AggregateArgs = {
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Query_RootProfile_Users_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Query_RootProfilesArgs = {
   distinct_on: InputMaybe<Array<Profiles_Select_Column>>;
@@ -924,7 +882,6 @@ export type Query_RootProfilesArgs = {
   where: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Query_RootProfiles_AggregateArgs = {
   distinct_on: InputMaybe<Array<Profiles_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -933,11 +890,9 @@ export type Query_RootProfiles_AggregateArgs = {
   where: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Query_RootProfiles_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Query_RootUsersArgs = {
   distinct_on: InputMaybe<Array<Users_Select_Column>>;
@@ -947,7 +902,6 @@ export type Query_RootUsersArgs = {
   where: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type Query_RootUsers_AggregateArgs = {
   distinct_on: InputMaybe<Array<Users_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -955,7 +909,6 @@ export type Query_RootUsers_AggregateArgs = {
   order_by: InputMaybe<Array<Users_Order_By>>;
   where: InputMaybe<Users_Bool_Exp>;
 };
-
 
 export type Query_RootUsers_By_PkArgs = {
   id: Scalars['uuid']['input'];
@@ -996,7 +949,6 @@ export type Subscription_Root = {
   users_stream: Array<Users>;
 };
 
-
 export type Subscription_RootGroupsArgs = {
   distinct_on: InputMaybe<Array<Groups_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -1004,7 +956,6 @@ export type Subscription_RootGroupsArgs = {
   order_by: InputMaybe<Array<Groups_Order_By>>;
   where: InputMaybe<Groups_Bool_Exp>;
 };
-
 
 export type Subscription_RootGroups_AggregateArgs = {
   distinct_on: InputMaybe<Array<Groups_Select_Column>>;
@@ -1014,18 +965,15 @@ export type Subscription_RootGroups_AggregateArgs = {
   where: InputMaybe<Groups_Bool_Exp>;
 };
 
-
 export type Subscription_RootGroups_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Subscription_RootGroups_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Groups_Stream_Cursor_Input>>;
   where: InputMaybe<Groups_Bool_Exp>;
 };
-
 
 export type Subscription_RootProfile_UsersArgs = {
   distinct_on: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -1035,7 +983,6 @@ export type Subscription_RootProfile_UsersArgs = {
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfile_Users_AggregateArgs = {
   distinct_on: InputMaybe<Array<Profile_Users_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -1044,18 +991,15 @@ export type Subscription_RootProfile_Users_AggregateArgs = {
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfile_Users_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Subscription_RootProfile_Users_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Profile_Users_Stream_Cursor_Input>>;
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
-
 
 export type Subscription_RootProfilesArgs = {
   distinct_on: InputMaybe<Array<Profiles_Select_Column>>;
@@ -1065,7 +1009,6 @@ export type Subscription_RootProfilesArgs = {
   where: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfiles_AggregateArgs = {
   distinct_on: InputMaybe<Array<Profiles_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -1074,18 +1017,15 @@ export type Subscription_RootProfiles_AggregateArgs = {
   where: InputMaybe<Profiles_Bool_Exp>;
 };
 
-
 export type Subscription_RootProfiles_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Subscription_RootProfiles_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Profiles_Stream_Cursor_Input>>;
   where: InputMaybe<Profiles_Bool_Exp>;
 };
-
 
 export type Subscription_RootUsersArgs = {
   distinct_on: InputMaybe<Array<Users_Select_Column>>;
@@ -1095,7 +1035,6 @@ export type Subscription_RootUsersArgs = {
   where: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootUsers_AggregateArgs = {
   distinct_on: InputMaybe<Array<Users_Select_Column>>;
   limit: InputMaybe<Scalars['Int']['input']>;
@@ -1104,11 +1043,9 @@ export type Subscription_RootUsers_AggregateArgs = {
   where: InputMaybe<Users_Bool_Exp>;
 };
 
-
 export type Subscription_RootUsers_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
-
 
 export type Subscription_RootUsers_StreamArgs = {
   batch_size: Scalars['Int']['input'];
@@ -1146,7 +1083,6 @@ export type Users = {
   profile_users_aggregate: Profile_Users_Aggregate;
 };
 
-
 /** columns and relationships of "users" */
 export type UsersProfile_UsersArgs = {
   distinct_on: InputMaybe<Array<Profile_Users_Select_Column>>;
@@ -1155,7 +1091,6 @@ export type UsersProfile_UsersArgs = {
   order_by: InputMaybe<Array<Profile_Users_Order_By>>;
   where: InputMaybe<Profile_Users_Bool_Exp>;
 };
-
 
 /** columns and relationships of "users" */
 export type UsersProfile_Users_AggregateArgs = {
@@ -1189,7 +1124,6 @@ export type Users_Aggregate_Fields = {
   max: Maybe<Users_Max_Fields>;
   min: Maybe<Users_Min_Fields>;
 };
-
 
 /** aggregate fields of "users" */
 export type Users_Aggregate_FieldsCountArgs = {
@@ -1393,18 +1327,445 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type GetUsersQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GetUsersQuery = { users: Array<{ id: any; name: string; created_at: any }> };
+
 export type GetUserQueryVariables = Exact<{
   id: Scalars['uuid']['input'];
 }>;
 
+export type GetUserQuery = { users_by_pk: { id: any; name: string; created_at: any } | null };
 
-export type GetUserQuery = { users_by_pk: { id: any, name: string, created_at: any } | null };
+export type TestUsersQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetUsersQueryVariables = Exact<{ [key: string]: never; }>;
+export type TestUsersQuery = { users: Array<{ id: any; name: string; created_at: any }> };
 
+export type TestUsersLocalQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetUsersQuery = { users: Array<{ id: any, name: string, created_at: any }> };
+export type TestUsersLocalQuery = { users: Array<{ id: any; name: string; created_at: any }> };
 
+export type TestUseridsQueryVariables = Exact<{ [key: string]: never }>;
 
-export const GetUserDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getUser"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"uuid"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users_by_pk"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"created_at"}}]}}]}}]} as unknown as DocumentNode<GetUserQuery, GetUserQueryVariables>;
-export const GetUsersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getUsers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"users"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"created_at"}}]}}]}}]} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;
+export type TestUseridsQuery = { users: Array<{ id: any }> };
+
+export type TestUserByIdQueryVariables = Exact<{
+  id: Scalars['uuid']['input'];
+}>;
+
+export type TestUserByIdQuery = { users_by_pk: { id: any; name: string; created_at: any } | null };
+
+export type CreateUserMutationVariables = Exact<{
+  name: Scalars['String']['input'];
+}>;
+
+export type CreateUserMutation = { insert_users_one: { id: any; name: string; created_at: any } | null };
+
+export type DeleteUserMutationVariables = Exact<{
+  id: Scalars['uuid']['input'];
+}>;
+
+export type DeleteUserMutation = { delete_users_by_pk: { id: any; name: string; created_at: any } | null };
+
+export type UpdateUserMutationVariables = Exact<{
+  id: Scalars['uuid']['input'];
+  name: Scalars['String']['input'];
+}>;
+
+export type UpdateUserMutation = { update_users_by_pk: { id: any; name: string; created_at: any } | null };
+
+export const GetUsersDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'getUsers' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'users' },
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetUsersQuery, GetUsersQueryVariables>;
+export const GetUserDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'getUser' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'uuid' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'users_by_pk' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetUserQuery, GetUserQueryVariables>;
+export const TestUsersDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'testUsers' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'users' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'order_by' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'created_at' },
+                      value: { kind: 'EnumValue', value: 'desc' },
+                    },
+                  ],
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<TestUsersQuery, TestUsersQueryVariables>;
+export const TestUsersLocalDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'testUsersLocal' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'users' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'order_by' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'created_at' },
+                      value: { kind: 'EnumValue', value: 'desc' },
+                    },
+                  ],
+                },
+              },
+            ],
+            directives: [{ kind: 'Directive', name: { kind: 'Name', value: 'client' } }],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<TestUsersLocalQuery, TestUsersLocalQueryVariables>;
+export const TestUseridsDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'testUserids' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'users' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'order_by' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'created_at' },
+                      value: { kind: 'EnumValue', value: 'desc' },
+                    },
+                  ],
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [{ kind: 'Field', name: { kind: 'Name', value: 'id' } }],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<TestUseridsQuery, TestUseridsQueryVariables>;
+export const TestUserByIdDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'testUserById' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'uuid' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'users_by_pk' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<TestUserByIdQuery, TestUserByIdQueryVariables>;
+export const CreateUserDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'createUser' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'name' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'insert_users_one' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'object' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'name' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'name' } },
+                    },
+                  ],
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<CreateUserMutation, CreateUserMutationVariables>;
+export const DeleteUserDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'deleteUser' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'uuid' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'delete_users_by_pk' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<DeleteUserMutation, DeleteUserMutationVariables>;
+export const UpdateUserDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'updateUser' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'uuid' } } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'name' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'update_users_by_pk' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'pk_columns' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'id' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+                    },
+                  ],
+                },
+              },
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: '_set' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'name' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'name' } },
+                    },
+                  ],
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'created_at' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<UpdateUserMutation, UpdateUserMutationVariables>;
