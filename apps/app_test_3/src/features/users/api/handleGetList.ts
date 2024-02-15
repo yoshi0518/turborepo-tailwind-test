@@ -2,7 +2,7 @@ import { GraphQLClient } from 'graphql-request';
 
 import type { UserType } from '@/features/users/types';
 
-import { GetUsersDocument } from '@/libs/gql/graphql';
+import { GetUsersDocument, TestUseridsDocument } from '@/libs/gql/graphql';
 
 import { hasuraApiUrl, hasuraAdminSecret } from '@/config';
 
@@ -18,6 +18,8 @@ const client = new GraphQLClient(hasuraApiUrl, {
 
 export const handleGetList = async (res: NextApiResponse<UserType[] | { message: string }>) => {
   try {
+    const test = await client.request(TestUseridsDocument);
+    console.log(JSON.stringify(test));
     const data = await client.request(GetUsersDocument);
     res.status(200).json(data.users);
   } catch (error) {
